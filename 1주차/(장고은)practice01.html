@@ -1,0 +1,105 @@
+<!--컴퓨터학과 20200298 장고은 chrome-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴퓨터학과 2학년 시간표</title>
+    <style>
+        table {
+            border-collapse:collapse;
+            text-align: center;
+        }
+
+        table, td {
+            border: 1px solid black;
+        }
+
+        td {
+            width: 80px;
+            height: 50px;
+        }
+
+        td.major1, td.major2, td.major3, td.major4 {
+            font-size: 13px;
+        }
+        
+        td.major1 {
+            background-color: #ffe08c;
+        }
+
+        td.major2 {
+            background-color: #b2ccff;
+        }
+
+        td.major3 {
+            background-color: #bdbdbd;
+        }
+
+        td.css1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        caption {
+            line-height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <table>
+            <caption>강의 시간표</caption>
+            <tr>
+                <td>2학년</td>
+                <td class="css1">월</td>
+                <td class="css1">화</td>
+                <td class="css1">수</td>
+                <td class="css1">목</td>
+                <td class="css1">금</td>
+            </tr>
+            <tr>
+                <td class="css1">1</td>
+                <td></td>
+                <td rowspan="2" class="major1">자료구조</td>
+                <td class="major1">네트워크</td>
+                <td></td>
+                <td class="major1">네트워크</td>
+            </tr>
+            <tr>
+                <td class="css1">2</td>
+                <td rowspan="2" class="major1">데이터베이스<br>개론</td>
+                <td></td>
+                <td></td>
+                <td class="major2">운영체제</td>
+            </tr>
+            <tr>
+                <td class="css1">3</td>
+                <td></td>
+                <td class="major2">운영체제</td>
+                <td></td>
+                <td rowspan="4" class="major4">사회봉사</td>
+            </tr>
+            <tr>
+                <td class="css1">4</td>
+                <td rowspan="2" class="major2">웹프로그래밍</td>
+                <td class="major3">창의와감성</td>
+                <td></td>
+                <td class="major3">창의와감성</td>
+            </tr>
+            <tr>
+                <td class="css1">5</td>
+                <td></td>
+                <td></td>
+                <td rowspan="2" class="major2">소프트웨어프로그래밍</td>
+            </tr>
+            <tr>
+                <td class="css1">6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

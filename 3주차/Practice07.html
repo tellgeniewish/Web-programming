@@ -1,0 +1,147 @@
+<!--응용화학과 20211689 김현진
+이 과제는 크롬에 최적화되어 있습니다.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>회원가입</title>
+        <script type="text/javascript">
+            function checkEmail() {
+                var txtMail = frm3.email.value;
+                var result = txtMail.indexOf("@");
+                if (result == -1) { // @이 없으면
+                    confirm('이메일주소 형식이 틀렸습니다.');
+                }
+                else {
+                    confirm('사용가능한 이메일 주소입니다.')
+                }
+            }
+            function clearMessage() {
+                frm3.email.value = "";
+            }
+        </script>
+        <style>
+            div { text-align: center; }
+            table { 
+                margin: auto;
+                border-collapse : collapse;
+                border: 1px solid #000000;
+                width: 30em;
+                height: 20em;
+            }
+            th {
+                text-align: center;
+                font-weight: bold;
+                background-color: #ECECEC;
+            }
+            th, td { border: 1px solid #000000; }
+            .idpw { width: 8em; height: 1em; }
+            input.imageAlign { vertical-align: middle; }
+            .num { width: 50px; height: 3%; }
+            #em { width: 18em; height: 1em; }
+            #birth { width: 9em; height: 1em; }
+            #hello { width: 400px; height: 70px; } /*고정 안 해도 됨*/
+            ::placeholder { color: #000000; }
+            #photo {
+                width: 250px;
+                height: 22px;
+                background-color: #ECECEC;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img src="./image/eclass_title.jpg">
+        </div>
+        <form name="frm3">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        회원가입
+                    </th>
+                </tr>
+                <tr>
+                    <th>아이디</th>
+                    <td>
+                        <input class="idpw" type="text">
+                        <input type="image" class="imageAlign" src="image/check.gif">
+                    </td>
+                </tr>
+                <tr>
+                    <th>패스워드</th>
+                    <td><input class="idpw" type="password"></td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <input type="radio" name=gen value=1>남
+                        <input type="radio" name=gen value=1 checked>여
+                    </td>
+                </tr>
+                <tr>
+                    <th>국적</th>
+                    <td>
+                        <input type="text" value="대한민국" readonly>
+                        <input type="button" value="국적변경" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <th>휴대폰</th>
+                    <td>
+                        <select name="phone">
+                            <option value="1" selected>010</option>
+                            <option value="2">011</option>
+                            <option value="3">017</option>
+                            <option value="4">070</option>
+                            <option value="5">080</option>
+                        </select>
+                        - <input class="num" type="text" maxlength="4">
+                        - <input class="num" type="text" maxlength="4">
+                    </td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td>
+                        <input id="em" type="text" name="email" value="소식지 받아보기" onFocus="clearMessage()">
+                        <input type="image" class="imageAlign" src="image/check.gif" onClick="checkEmail()">
+                    </td>
+                </tr>
+                <tr>
+                    <th>생일</th>
+                    <td>
+                        <input id="birth" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>관심분야</th>
+                    <td>
+                        <input type=checkbox name=hobby value="0">뉴스
+                        <input type=checkbox name=hobby value="1" checked>맛집
+                        <input type=checkbox name=hobby value="2">책
+                        <input type=checkbox name=hobby value="3">영화
+                        <input type=checkbox name=hobby value="4">여행
+                    </td>
+                </tr>
+                <tr>
+                    <th>가입인사</th>
+                    <td>
+                        <textarea id="hello" placeholder="회원들에게 간단한 가입인사를 남겨주세요"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>증명사진</th>
+                    <td>
+                        <input type="text" id="photo" readonly><input type="button" value="찾아보기...">
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="button" value="가입하기" onclick="document.location='member4.html'">
+                        <input type="reset" value="다시작성">
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

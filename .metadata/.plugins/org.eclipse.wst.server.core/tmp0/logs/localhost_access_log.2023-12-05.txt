@@ -1,0 +1,11 @@
+127.0.0.1 - - [05/Dec/2023:20:09:56 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:02 +0900] "GET /ch03/Practice%2028/addr_form.jsp HTTP/1.1" 200 1124
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:02 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:14 +0900] "POST /ch03/Practice%2028/addr_add.jsp HTTP/1.1" 200 541
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:18 +0900] "GET /ch03/Practice%2028/addr_list.jsp HTTP/1.1" 200 522
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:19 +0900] "GET /ch03/Practice%2028/addr_form.jsp HTTP/1.1" 200 1124
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:33 +0900] "POST /ch03/Practice%2028/addr_add.jsp HTTP/1.1" 200 551
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:10:35 +0900] "GET /ch03/Practice%2028/addr_list.jsp HTTP/1.1" 200 522
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:11:12 +0900] "GET /ch03/Practice%2028/addr_form.jsp HTTP/1.1" 200 1124
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:11:32 +0900] "POST /ch03/Practice%2028/addr_add.jsp HTTP/1.1" 200 527
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:11:34 +0900] "GET /ch03/Practice%2028/addr_list.jsp HTTP/1.1" 200 567

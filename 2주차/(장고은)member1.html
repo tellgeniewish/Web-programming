@@ -1,0 +1,62 @@
+<!--컴퓨터학과 20200298 장고은 Microsoft Edge-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이클래스 로그인</title>
+    <style>
+        div {display: block;}
+        h2 {text-align: center;}
+        hr {width: 964px;}
+        img.imageLogo{
+            display: inline-block;
+            margin-left: 70px;
+        }
+        form {
+            /**/display: inline-block;
+            font-weight: bold;
+            height: 200px;
+        }
+        tr {line-height: 35px;}
+    </style>
+</head>
+<body>
+    <div align="center">
+        <img src="image/eclass_title.jpg">
+        <h2>로그인</h2>
+        <hr>
+        <img src="image/eclass_logo.png" class="imageLogo">
+        <form name="frm1">
+            <table border="1">
+                <tr>
+                    <td colspan="2">회원님의 아이디와 비밀번호를 정확히 입력하세요.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <select name="type">
+                            <option value="학부생">학부생</option>
+                            <option value="교수진">교수진</option>
+                            <option value="대학원생">대학원생</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" style="background-color: #ffff99;" name="id" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" style="background-color: #ffff99;" name="pwd" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="로그인">
+                        <input type="button" value="가입하기" onclick="document.location='./member2.html'">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

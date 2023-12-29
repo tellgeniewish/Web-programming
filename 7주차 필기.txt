@@ -1,0 +1,122 @@
+7주차(231019)
+
+<%이 안의 코드는 _jspSerive()에 적힌다
+메소드 안에 들어갈 수 있는 코드만 적을 수 있음
+메소드 정의 불가%>
+
+메소드의 매개변수->request, response
+메소드의 지역변수->나머지
+
+exception: 항상 지역 변수로 만들어진다? -> (X)
+isErrorPage가 true인 경우에만 exception가 지역변수로 만들어짐
+
+-----   -----   ------
+<@! 선언 태그로 선언한 변수나 메소드는 메소드 안이 아니라 소속 변수, 메소드가 됨@>
+
+application 2개: 소속변수와 지역변수
+-> 컴파일은 됨
+->지역 변수가 소속 변수를 가림(이용 불가능은 아님)
+=>지역 변수인 app를 사용하게 됨
+->선언태그로 선언한 소속 변수는 사용 안 됨
+->가독성 x
+
+<@! int request = 100; @> // 컴파일 오류->같은 메소드 안에서 똑같은 이름의 변수 두 번 선언 불가
+
+-----   -----   ------
+내장 객체 request
+타입 안 외워도 됨! api찾을 때 찾아봐야 함 https://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html
+사용자 요구사항, 입력을 jsp 페이지로 전달함
+
+name속성이 중요함
+name에서 입력된 값이 구별됨
+
+<form>
+
+사용자가 <intput type="submit">을 누르면
+submit버튼이 포함된 form태그 안에 있는 입력값들을
+request 내장객체에 차곡차곡 실어서
+form태그의 action속성의 파일로 보내준다.
+
+request 내장 객체->태그에서 value로 지정된 값이 저장됨
+name   :   "value"
+name      "홍길동"
+studentNum   "20051234"
+sex      "woman"
+country      "대한민국"
+
+(웹프에서는 모든 입출력이 String이다)
+
+-----
+reqiest.getParameter("name") // name에 해당하는 value를 매개변수로 String을 하나 받음
+->request에 name이 없으면 null 반환
+->여러 개 있으면 하나만 반환
+
+equalsIsIgnoreCase("") // 후처리가 필요하면 자유롭게 자바 코드가 들어간다
+
+-----   ------   ------
+select태그에 multiple을 주면 여러 개 선택 가능->ctrl키와 함께
+
+String[] major = request.getParameterValues("name") // 배열로 선언
+->request에 name이 없으면 null 반환
+->하나 뿐이면 길이가 1인 String형 배열 반환함
+
+객체가 리턴하는 값이 NULL인지 아닌지 if문으로 확인해야 함!!
+
+checkbox도 역시나 같다
+
+request.getMethod() // form태그의 method를 반환함
+// get 또는 post값을 가질 수 있다.
+
+request.getRequestURL() // 
+
+-----   ------   ------
+request.getParameterValues("name") 사용 가능
+
+Enumeration<String> e = request.getParameterNames(); // request의 파라미터 name들만 가져온다
+// 자바의 hashset처럼 순서가 없다
+
+e.hasMoreElements() // Enumeration의 메소드
+->더 있으면 true
+->없으면 false
+
+e.nextElement(); // String형 반환 // Enumeration이 제네릭이라서
+
+import반드시 해줘야 함!!
+
+-----
+반드시 스크립트릿 <@ @>
+request.setCharacterEncoding("uft-8");
+
+//맨 위줄에 페이지 지시어
+//그 다음에 임폴트
+//그 다음에 
+
+-----   ------   ------
+한글 처리 p.107
+request.setCharacterEncoding("uft-8");
+
+이클립스 utf-8로 맞춰주기
+
+-----
+get VS post
+
+get
+-전송 자료 크기의 제한 있음
+-사용자 입력값을 공개하여 전송(맨 처음에 디자인할 때는 아이디와 패스워드가 주소창에 보였음)
+->캡쳐 화면이 넘어감
+-form 태그 method의 디폴트
+
+post(get의 두 가지 단점을 보완함)
+-전송 자료 크기의 제한 없음
+-사용자 입력값이 주소창에 공개되지 않음
+
+-----
+쿼리 스트링
+get방식을 사용하면 주소창에 입력값이 전부 보임
+password도 숫자로 다 보임
+->pw는 절대로 get방식으로 보내면 안 된다!
+
+jsp페이지.jsp?사용자의 입력값~(파라미터 이름=벨류&파라미터 이름=벨류...)
+& (파라미터와 파라미터 사이)
+
+=이나 & 앞뒤로 공백이 없어야 한다->쿼리 스트링

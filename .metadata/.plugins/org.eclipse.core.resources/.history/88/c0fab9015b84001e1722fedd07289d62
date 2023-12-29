@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>session_03</title>
+</head>
+<body>
+session.getLastAccessedTime()
+<%
+long mseconds = session.getCreationTime();
+Date time = new Date(mseconds);
+%>
+<%= time %>
+<br>
+session.getCreationTime() 
+<% 
+mseconds = session.getCreationTime() ;
+time = new Date(mseconds);
+%>
+<%= time %>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--응용화학과 20211689 김현진
+이 과제는 크롬에 최적화되어 있습니다.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>컴퓨터학과 2학년 시간표</title>
+        <style>
+            h3 { text-align: center; }
+
+            table {
+                margin: auto;
+                border: 1px solid #000000;;
+                border-collapse : collapse;
+                text-align: center;
+            }
+
+            th, td {
+                border: 1px solid #000000;
+                width: 90px;
+                height: 60px;
+            }
+            th.time { font-family:'Times New Roman', Times, serif; }
+            th { font-weight: bold; font-size: 20px; }
+            td { font-size: 13px; }
+
+            td.yellow { background-color: #FEDF8B; }
+            td.blue { background-color: #B1CBFE; }
+            td.grey { background-color: #BCBCBC; }
+        </style>
+    </head>
+    <body>
+        <h3>강의 시간표</h3>
+        <form>
+            <table class="grey">
+                <tr>
+                    <th class="time">2학년</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                </tr>
+                <tr>
+                    <th class="time">1</th>
+                    <td></td>
+                    <td class="yellow" rowspan="2">자료구조</td>
+                    <td class="yellow">네트워크</td>
+                    <td></td>
+                    <td class="yellow">네트워크</td>
+                </tr>
+                <tr>
+                    <th class="time">2</th>
+                    <td class="yellow" rowspan="2">데이터베이스개론</td>
+                    <td></td>
+                    <td></td>
+                    <td class="blue">운영체제</td>
+                </tr>
+                <tr>
+                    <th class="time">3</th>
+                    <td></td>
+                    <td class="blue">운영체제</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">4</th>
+                    <td class="blue" rowspan="2">웹프로그래밍</td>
+                    <td class="grey">창의와감성</td>
+                    <td></td>
+                    <td class="grey">창의와감성</td>
+                    <td rowspan="3">사회봉사</td>
+                </tr>
+                <tr>
+                    <th class="time">5</th>
+                    <td></td>
+                    <td></td>
+                    <td class="blue" rowspan="2">소프트웨어프로그래밍</td>
+                </tr>
+                <tr>
+                    <th class="time">6</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>    
+    </body>
+</html>

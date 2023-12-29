@@ -1,0 +1,78 @@
+<!---컴퓨터학과 20210813 정다은--->
+<!--해당 html 스크립트는 Chrome 브라우저를 기준으로 작성되었습니다.-->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        h2 { text-align: center; }
+
+        table {
+            margin: auto;
+            border: 1px solid #444444;
+            border-collapse: collapse; 
+            text-align: center; }
+        th, td { border: 1px solid #444444; }
+        th { font-size: 20px; font-weight: bold; width: 90px; height: 60px; }
+        td { font-size: 13px; width: 90px; height: 60px;}
+
+        td.yelw { background-color: #FAE198; }
+        td.blue { background-color: #B7CBFB; }
+        td.grey { background-color: #BDBDBD;}
+
+    </style>
+</head>
+<body>
+    <h2>강의 시간표</h2>
+    <table>
+        <tr>
+            <th>2학년</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td></td>
+            <td rowspan="2" class="yelw">자료구조</td>
+            <td class="yelw">네트워크</td>
+            <td></td>
+            <td class="yelw">네트워크</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td rowspan="2" class="yelw">데이터베이스개론</td>
+            <td></td>
+            <td></td>
+            <td class="blue">운영체제</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td></td>
+            <td class="blue">운영체제</td>
+            <td></td>
+            <td rowspan="4">사회봉사</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td rowspan="2" class="blue">웹프로그래밍</td>
+            <td class="grey">창의와감성</td>
+            <td></td>
+            <td class="grey">창의와감성</td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td></td>
+            <td></td>
+            <td rowspan="2" class="blue">소프트웨어프로그래밍</td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

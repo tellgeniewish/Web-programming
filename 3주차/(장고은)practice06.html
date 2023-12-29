@@ -1,0 +1,45 @@
+<!--컴퓨터학과 20200298 장고은 Microsoft Edge-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계산기</title>
+    <style>
+        td {
+            width: 400px;
+            border: 1px gray solid;
+        }
+        td.blue {
+            background-color: #32CCFE;
+            height: 56px;
+            font-style: italic;
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calc() {
+            var exp = prompt("스크립트 프롬프트:\n계산할 수식을 입력하세요", "123+456");
+
+            if (exp != null ) { 
+                var result = eval(exp);
+                alert(result);
+            }
+        }
+    </script>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td colspan="2" class="blue">CalCuLaTor</td>
+        </tr>
+        <tr>
+            <td style="width: 200px;"><input type="image" src="image/cal.jpg" style="width: 230px; height: 300px;"></td>
+            <td style="width: 170px; text-align: center;"><button onclick="calc()">계산하기</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="blue"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align='center'>
+		<h2>include 지시어 연습</h2>
+		<hr>
+		<p>
+	</div>
+	<div align='left'>
+		<%@ include file="calendar.jsp" %>
+	</div>
+	<div align='right'>
+		<%@ include file="news.jsp" %>
+	</div>
+	</div>
+</body>
+</html>

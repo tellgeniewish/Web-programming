@@ -1,0 +1,82 @@
+웹프. 10주
+
+html이 태그 기반 언어의 표준은 아님
+
+XML
+
+<table> // <>안의 table은 태그 이름
+   <tr>
+      <td>태그 바디(텍스트, 또 다른 태그 들어갈 수 있음)</td>
+   </tr>
+</table>
+=에 붙어 나오는건 (태그)속성, attribute
+
+액션 태그 종류
+
+시작한 후에 끝나는 코드 없으면 오류남
+<jsp:태그키워드 태그속성="태그값">
+</jsp:태그키워드>// 반드시 끝나는 태그 있어야 함
+
+<jsp:include에는 태그 바디 없을 수도 있음
+있다면 <jsp:param 이 올 수 있음
+<jsp:include page="sub.jsp" /> // 태그 바디 없으면 한 문장 내에서 끝나는 태그 />로 끝내줘야 함
+
+-----
+
+지시어 include(실행 결과가 복붙되는게 아니라 코드 자체가 복붙됨)
+-소스의 삽입
+-지역변수 중복 선언의 문제가 발생할 수 있음
+
+액션 태그 include(실행 결과가 태그 자리에 들어감)
+-결과의 삽입
+-
+-
+
+예제 6-3, 6-4, 6-5
+6-3의 9번줄 주석처리 안 되어 있으면 컴파일 오류가 남
+(두번 선언할 수 없어서)
+6-4의 n과 충돌하지 않기 위해 주석처리함
+
+안 좋은 코드이지만(있을 것이라 예상되는 변수를 사용함)
+6-3코드의 마지막에
+1년의 <%= n %>중입니다.
+라는 코드를 넣으면
+컴파일 오류 안남!
+
+<% pageContext.include("includesub.jsp")%>
+<jsp:include page="includesub.jsp" />
+-----
+
+forward
+<jsp:forward page="forwardsub.jsp" />
+
+링크는 main.jsp
+타이틀은 "forwardsub.jsp"에 적힌
+-> 인증우회
+(보안 상의 이유로 많이 사용됨)
+
+-----
+forward와 include 차이
+include
+
+<% pageContext.forward("send.jsp")%>
+<jspforward page="send.jsp" />
+
+-----
+param
+
+include와 forward와 함께 사용
+name과 value 전송하는 역할
+String만 전달 가능
+<jsp:param name="id" value="khj" />
+request내장객체에서 꺼내쓴다
+
+예제 6-11, 6-12, 6-13
+현재 login.jsp에 넘어온 request 내장객체 파라미터도
+함께 loginhandle.jsp로 전달된다
+
+-----
+plugin
+
+웹브라우저마다 plugin이 있는데 문법이 다 다르다
+필요하면 가져다 쓰면 됨

@@ -1,0 +1,107 @@
+표현언어: 출력용
+
+JSTL 커스텀 태그
+p.429
+
+자바보다 표현력이 떨어진다
+
+이걸로 안 되면 자바 코드 써야 함
+
+taglib 지시자
+<%@ taglib prefix="c" url="http://java.sun.com/jsp/jstl/core" %>
+
+코어 태그 라이브러리 p.435~436
+set: 대입문을 대신할 수 있음(내장 객체에 속성으로 저장함)
+<c:set var="변수 이름" value="저장할 값" scope="4개 중에 하나" />
+
+<c:set target="${객체 이름}" property="필드 이름"value="저장할 값" />
+객체 이름: arraylist, javabean 등
+
+page가 기본값이라 scope지정 안 하면 page에 속성으로 저장된다
+
+n에는 태그 바디 사이의 24가 저장된다
+<c:set var="n" >
+24
+</c:set>
+
+${str} 내장객체 4개를 다 훑어보고 출력함
+${sessionScope.str} session의 str을 출력함
+
+setAttribute -> c:set
+getAttribute -> 표현언어
+
+oneday year = 2010;
+oneday.setYear = 2010; // private이면
+-> <c:set target="${oneday}" property="year" value="2010" />
+// jsp의 setProperty 액션 태그와 비슷(둘 다 가능하다)
+
+HashMap: key값과 value값 2개를 가짐(사전형)
+-get
+-put
+
+c:set이나 useBean을 사용해서 객체 만든 이후에 표현언어 사용하면 됨
+
+-----
+c:remove
+var만 필수
+scope는 옵션
+-----
+c:if
+test만 필수
+나머지는 옵션 -> var은 test의 결과(true or false)를 저장
+
+<c:if test="${today.hours>=17}" var="bool">
+	body
+</c:if>
+bool에 참, 거짓이 저장되고, true이면 body의 내용이 출력된다
+
+<c:set var="${today}" value="<%= new java.util.Date() %>" />
+원래 value는 String만 올 수 있음
+new java.util.Date()는 객체지만 <%=  %>으로 작성함으로서 출력문(String)이 됨
+
+<c:if test="${today.hours>=17}" var="bool">
+	body
+</c:if>
+
+-----
+c:choose
+
+스위치문과 비슷
+when과 otherwise 하나만 사용하면 if-else문 구현 가능
+
+-----
+for each: 배열, Collection, Map에 저장된 원소를
+순차적으로 처리하거나 지정하는 횟수만큼 반복할 때
+
+int sum = 0;
+int[] score = new int[] {...};
+for(int point: score) {
+	System.out.println(point);
+	sum += point;
+}
+System.out.println(sum);
+
+var -> point
+items -> score
+
+int sum = 0;
+for (int i = 0; i <= 100; i++)
+	sum += i;
+System.out.println(sum);
+
+jsp end값 포함!!!
+step 안 쓰면 기본 1
+
+-----
+c:forTokens 패스
+URL태그 관리 패스
+
+-----
+p.463
+c:out
+html출력을 위함
+<c:out value="${param.name}">
+	body
+</c:out>
+value가 null이면 body가 출력됨
+많이 사용되지 않는다->표현언어가 훨씬 더 많이 사용된다

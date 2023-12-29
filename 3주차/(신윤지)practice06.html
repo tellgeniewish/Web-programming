@@ -1,0 +1,60 @@
+<!--일본어과 20200224 신윤지-->
+<!--맥북 크롬 웹 브라우저에 최적화 되어 있습니다.-->
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>계산기</title>
+
+        <script>
+            function calc() {
+                var exp = prompt("스크립트 프롬프트: 계산할 수식을 입력하세요")
+                
+                if (exp) {
+                    alert(eval(exp));
+                }
+                return;
+            }
+        </script>
+
+        <style>
+            table {
+                width: 80%;
+                text-align: center;
+                font-size: 80px;
+                empty-cells: show;
+                border-spacing: 5px;
+                table-layout: fixed;
+            }
+
+            td {
+                border: 1px solid #e8e8e8;
+            }
+
+            td.info {
+                height: 80px;
+                background-color: #32ccfe;
+                font-style: italic;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table align="center">
+            <tr>
+                <td colspan="2" class="info">CalCuLaTor</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./image/cal.jpg" width="100%" />
+                </td>
+                <td>
+                    <input type="button" value="계산하기" onclick="calc()" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="info"> </td>
+            </tr>
+        </table>
+    </body>
+</html>

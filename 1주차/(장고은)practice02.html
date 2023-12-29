@@ -1,0 +1,119 @@
+<!--컴퓨터학과 20200298 장고은 Microsoft Edge-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입</title>
+    <style>
+        table {
+            border-collapse:collapse;
+            margin: 0 auto;
+        }
+
+        table, td {
+            border: 1px solid black;
+        }
+
+        td.color {
+            width: 70px;
+            text-align: center;
+            font-weight: bold;
+            background-color: #ececec;
+        }
+
+        input.imageAlign {
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" class="color">회원가입</td>
+            </tr>
+            <tr>
+                <td class="color">아이디</td>
+                <td>
+                    <input size="13"> 
+                    <input type="image" src="image/check.gif" class="imageAlign">
+                </td>
+            </tr>
+            <tr>
+                <td class="color">패스워드</td>
+                <td>
+                    <input type="password" size="12">
+                </td>
+            </tr>
+            <tr>
+                <td class="color">성별</td>
+                <td>
+                    <input type="radio" name="gen" value="0">남
+                    <input type="radio" name="gen" value="1" checked>여
+                </td>
+            </tr>
+            <tr>
+                <td class="color">국적</td>
+                <td>
+                    <input size="20" placeholder="대한민국" readonly>
+                    <input type="button" value="국적변경" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td class="color">휴대폰</td>
+                <td>
+                    <select name="전화번호" id="전화번호">
+                        <option value="010">010</option>
+                        <!-- <option value="031">031</option> -->
+                        <!-- <option value="02">02</option> -->
+                    </select>
+                    -
+                    <input size="4" maxlength="4"> 
+                    -
+                    <input size="4" maxlength="4"> 
+                </td>
+            </tr>
+            <tr>
+                <td class="color">이메일</td>
+                <td>
+                    <input type="email" size="38"> 
+                </td>
+            </tr>
+            <tr>
+                <td class="color">생일</td>
+                <td>
+                    <input size="20" placeholder="연도-월-일"> 
+                </td>
+            </tr>
+            <tr>
+                <td class="color">관심분야</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="0">뉴스
+                    <input type="checkbox" name="hobby" value="1" checked>맛집
+                    <input type="checkbox" name="hobby" value="2">책
+                    <input type="checkbox" name="hobby" value="3">영화
+                    <input type="checkbox" name="hobby" value="4">여행
+                </td>
+            </tr>
+            <tr>
+                <td class="color">가입인사</td>
+                <td>
+                    <textarea name="가입인사" id="가입인사" cols="60" rows="5" placeholder="회원들에게 간단한 가입인사를 남겨주세요"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="color">증명사진</td>
+                <td>
+                    <input type="file"> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="color">
+                    <input type="submit" value="가입하기">
+                    <input type="reset" value="다시작성">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
